@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Nav from "./components/Nav";
 import Courses from "./components/Courses";
 import Cart from "./components/Cart";
+import Home from "./components/Home";
 
 class App extends Component {
   state = {
@@ -51,8 +52,9 @@ class App extends Component {
     return (
       <Router>
         <>
-          <Nav toggleCart={this.toggleCart.bind(this)} inCart={inCart} />
-          <div
+          <Route exact path="/" component={Home} />
+
+          {/* <div
             style={{
               marginTop: "20px"
             }}
@@ -66,7 +68,7 @@ class App extends Component {
                 removeItem={this.removeItem.bind(this)}
               />
             </div>
-          </div>
+          </div> */}
         </>
       </Router>
     );

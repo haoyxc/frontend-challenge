@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
 
-import Nav from "./components/Nav";
-import Courses from "./components/Courses";
-import Cart from "./components/Cart";
+import Nav from "./Nav";
+import Courses from "./Courses";
+import Cart from "./Cart";
 
 export default class Home extends Component {
   state = {
@@ -45,6 +44,7 @@ export default class Home extends Component {
     const { showCart, inCart, clearCart } = this.state;
     return (
       <>
+        <Nav toggleCart={this.toggleCart.bind(this)} inCart={inCart} />
         <div
           style={{
             marginTop: "20px"
