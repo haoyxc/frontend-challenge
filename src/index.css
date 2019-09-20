@@ -1,14 +1,133 @@
+:root {
+  --primaryColor: #ffd1dc;
+  --primaryDark: #ff9eb5;
+  --primaryColor2: #d1f3ff;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: none;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+.divContainer {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--primaryColor2);
+  z-index: 1;
+}
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.nav-icon {
+  font-size: 1.5rem;
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+/* Navbar end */
+/* Courses */
+.courses {
+  position: sticky;
+  width: 100%;
+}
+.course {
+  padding: 10px;
+  margin: 5px;
+  border: #222 solid 1px;
+  border-radius: 10px;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  background-color: var(--primaryColor);
+}
+.course:hover {
+  background-color: var(--primaryDark);
+  color: var(--mainWhite);
+}
+.description {
+  max-width: 100%;
+}
+/* Courses end */
+/* Cart Start */
+.showCart {
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: scroll; */
+  z-index: 3;
+  transition: var(--mainTransition);
+  transform: translateX(0);
+}
+.cart {
+  /* position: fixed; */
+  /* top: 0; */
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: scroll; */
+  z-index: 3;
+  /* background: rgb(231, 226, 221); */
+  /* padding: 1.5rem; */
+  transition: var(--mainTransition);
+  /* transform: translateX(100%); */
+  transform: translateX(100%);
+}
+.remove-item {
+  cursor: pointer;
+}
+.checkout {
+  text-decoration: none;
+  background-color: var(--primaryColor);
+  border: black 1px solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 30px;
+}
+.checkout:hover {
+  background-color: var(--primaryDark);
+}
+/* Cart End */

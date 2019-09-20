@@ -1,20 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Nav from "./components/Nav";
 import Courses from "./components/Courses";
 import Cart from "./components/Cart";
 
-class App extends Component {
+export default class Home extends Component {
   state = {
     showCart: false,
     inCart: [[120, "Computer Science"]],
     cartNums: { 120: "Computer Science" }
   };
-  // handleClick = number => {
-  //   console.log("hi");
-  // };
   toggleCart = () => {
     this.setState({ showCart: !this.state.showCart });
     console.log(this.state.showCart);
@@ -45,32 +41,26 @@ class App extends Component {
     this.setState({ inCart: newCart, cartNums: newNums });
     console.log("remove", number);
   };
-
   render() {
     const { showCart, inCart, clearCart } = this.state;
     return (
-      <Router>
-        <>
-          <Nav toggleCart={this.toggleCart.bind(this)} inCart={inCart} />
-          <div
-            style={{
-              marginTop: "20px"
-            }}
-          >
-            <div className="divContainer">
-              <Courses addToCart={this.addToCart.bind(this)} />
-              <Cart
-                clearCart={this.clearCart.bind(this)}
-                showStatus={showCart ? "showCart" : "cart"}
-                inCart={inCart}
-                removeItem={this.removeItem.bind(this)}
-              />
-            </div>
+      <>
+        <div
+          style={{
+            marginTop: "20px"
+          }}
+        >
+          <div className="divContainer">
+            <Courses addToCart={this.addToCart.bind(this)} />
+            <Cart
+              clearCart={this.clearCart.bind(this)}
+              showStatus={showCart ? "showCart" : "cart"}
+              inCart={inCart}
+              removeItem={this.removeItem.bind(this)}
+            />
           </div>
-        </>
-      </Router>
+        </div>
+      </>
     );
   }
 }
-
-export default App;
