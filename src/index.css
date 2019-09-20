@@ -1,7 +1,7 @@
 :root {
-  --primaryColor: #ffd1dc;
-  --primaryDark: #ff9eb5;
-  --primaryColor2: #d1f3ff;
+  --primaryColor: #209cee;
+  --primaryDark: #12274b;
+  --primaryColor2: #e25152;
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #ececec;
@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: none;
+  /* max-width: 100%; */
 }
 body {
   margin: 0;
@@ -21,6 +21,7 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -29,6 +30,7 @@ code {
 .divContainer {
   display: flex;
   flex-direction: row;
+  /* margin: 10px; */
   /* justify-content: center; */
 }
 /* Navbar */
@@ -72,6 +74,7 @@ code {
 .courses {
   position: sticky;
   width: 100%;
+  margin: 10px 20px;
 }
 .course {
   padding: 10px;
@@ -83,12 +86,30 @@ code {
   justify-content: space-between;
   background-color: var(--primaryColor);
 }
+.course.gray {
+  background-color: var(--mainGrey);
+}
+.course.gray:hover {
+  background-color: var(--mainGrey);
+  color: var(--mainBlack);
+}
+.course.gray .addBtn {
+  visibility: hidden;
+}
 .course:hover {
   background-color: var(--primaryDark);
   color: var(--mainWhite);
 }
+.courseTitle:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .description {
   max-width: 100%;
+}
+.addBtn {
+  cursor: pointer;
 }
 /* Courses end */
 /* Cart Start */
@@ -114,20 +135,67 @@ code {
   transition: var(--mainTransition);
   /* transform: translateX(100%); */
   transform: translateX(100%);
+  /* padding: 10px 20px; */
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--primaryColor2);
+  border-radius: 10px;
+  margin: 5px;
+}
+.cart-footer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
 }
 .remove-item {
   cursor: pointer;
 }
-.checkout {
-  text-decoration: none;
-  background-color: var(--primaryColor);
-  border: black 1px solid;
+.cartBtns {
+  display: flex;
+  flex-direction: row;
+  /* bottom: 0; */
+  /* position: fixed; */
+  /* width: 100%; */
+}
+.cartBtn {
+  margin: 10px;
+  padding: 10px;
   border-radius: 20px;
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+  text-decoration: none;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.cartBtn:hover {
+  background-color: var(--primaryDark);
+}
+.clearCart:hover {
+  background-color: red;
+}
+.checkout:hover {
+  background-color: green;
+  font-weight: bold;
+  /* background-color: var(--primaryColor);
+  border: black 1px solid;
+
   padding: 10px;
   margin: 10px;
   margin-top: 30px;
+  color: white; */
 }
-.checkout:hover {
+/* .checkout:hover {
   background-color: var(--primaryDark);
-}
+  color: white;
+} */
 /* Cart End */
+/* Checkout List start */
+.checkoutList {
+  margin: 10px;
+}
+/* Checkout List end */

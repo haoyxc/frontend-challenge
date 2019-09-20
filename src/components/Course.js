@@ -21,17 +21,17 @@ export default class Course extends Component {
   //     console.log(this.showDescrip);
   //   }
   render() {
-    let { dept, number, title, description, addToCart } = this.props;
+    let { dept, number, title, description, addToCart, color } = this.props;
 
     return (
-      <div className="course">
+      <div className={color}>
         <div onClick={this.handleClick}>
-          <p key={`${dept}-${number}`}>
+          <p key={`${dept}-${number}`} className="courseTitle">
             {dept} {number}: {title}
           </p>
           {this.state.showDescrip ? <p className="description">{description}</p> : null}
         </div>
-        <div>
+        <div className="addBtn">
           <i className="fa fa-plus" onClick={addToCart}></i>
         </div>
       </div>

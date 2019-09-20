@@ -40,8 +40,12 @@ export default class Home extends Component {
     this.setState({ inCart: newCart, cartNums: newNums });
     console.log("remove", number);
   };
+  saveCart = () => {
+    localStorage.setItem("courses", JSON.stringify(this.state.inCart));
+    console.log("saved");
+  };
   render() {
-    const { showCart, inCart, clearCart } = this.state;
+    const { showCart, inCart, clearCart, cartNums } = this.state;
     return (
       <>
         <Nav toggleCart={this.toggleCart.bind(this)} inCart={inCart} />
@@ -51,12 +55,13 @@ export default class Home extends Component {
           }}
         >
           <div className="divContainer">
-            <Courses addToCart={this.addToCart.bind(this)} />
+            <Courses addToCart={this.addToCart.bind(this)} cartNums={cartNums} />
             <Cart
               clearCart={this.clearCart.bind(this)}
               showStatus={showCart ? "showCart" : "cart"}
               inCart={inCart}
               removeItem={this.removeItem.bind(this)}
+              saveCart={this.saveCart.bind(this)}
             />
           </div>
         </div>

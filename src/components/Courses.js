@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import courses from "../data/courses";
 import Course from "./Course";
 
-export default function Courses({ addToCart }) {
+export default function Courses({ addToCart, cartNums }) {
   return (
     <div className="courses">
       {courses.map(({ dept, number, title, description }) => {
@@ -15,7 +15,8 @@ export default function Courses({ addToCart }) {
               number={number}
               title={title}
               description={description}
-              addToCart={() => addToCart(number, title)}
+              addToCart={() => addToCart(number, title, dept)}
+              color={cartNums[number] ? "course gray" : " course pink"}
 
               // onClick={() => {
               //   this.props.handleClick;
