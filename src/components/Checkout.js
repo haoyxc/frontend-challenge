@@ -10,15 +10,27 @@ export default function Checkout() {
   }, []);
 
   return (
-    <div className="checkoutList">
-      {classes.map(c => {
-        return (
-          <div>
-            {c[1]}
-            {console.log(c)}
+    <>
+      <nav className="navbar">
+        <div className="navbar-center checkoutNav">
+          <div className="logo-container">
+            <h3>Penn Course Cart</h3>
           </div>
-        );
-      })}
-    </div>
+        </div>
+      </nav>
+
+      <div className="checkoutList">
+        <div>
+          <h2>Your classes:</h2>
+        </div>
+        {classes.map(c => {
+          return (
+            <div className="checkoutItem cart-item">
+              CIS {c[0]}: {c[1]}
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }

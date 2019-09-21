@@ -6,8 +6,7 @@ export default class Cart extends Component {
     let { showStatus, inCart, clearCart, removeItem, saveCart } = this.props;
     return (
       <div className="cart" className={showStatus}>
-        {/* <div className="cart-overlay"> */}
-        <span className="close-cart">{/* <i className="fa fa-window-close"></i> */}</span>
+        <span className="close-cart"></span>
         <h2>Your Course Cart</h2>
         <div className="cart-content"></div>
         {/* Cart Item */}
@@ -33,7 +32,6 @@ export default class Cart extends Component {
 
         {/* Cart Item */}
         <div className="cart-footer">
-          {/* <div className="cartOpts"> */}
           <h3>
             Number of classes: <span className="cart-total">{inCart.length}</span>
           </h3>
@@ -42,8 +40,6 @@ export default class Cart extends Component {
               {" "}
               Clear Cart
             </p>
-            {/* <button className="clear-cart banner-btn">Clear cart</button> */}
-            {/* </div> */}
 
             <Link
               to="/checkout"

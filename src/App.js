@@ -12,8 +12,8 @@ import Checkout from "./components/Checkout";
 class App extends Component {
   state = {
     showCart: false,
-    inCart: [[120, "Computer Science", "CIS"]],
-    cartNums: { 120: "Computer Science" }
+    inCart: [],
+    cartNums: {}
   };
   // handleClick = number => {
   //   console.log("hi");
