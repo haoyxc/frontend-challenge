@@ -11,7 +11,7 @@ export default function Nav({ toggleCart, inCart }) {
             <i className="fa fa-bars"></i>
           </span>
           <div className="logo-container">
-            <h3>Penn Course Cart</h3>
+            <h3 className="navTitle">Penn Course Cart</h3>
           </div>
           <div className="cart-btn" onClick={toggleCart}>
             <span className="nav-icon">

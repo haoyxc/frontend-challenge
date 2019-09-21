@@ -198,3 +198,8 @@ code {
   border-radius: 10px;
   margin: 20px;
 }
+.checkoutBtnContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

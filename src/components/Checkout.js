@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Checkout() {
   let [classes, setClasses] = useState([]);
@@ -31,6 +32,11 @@ export default function Checkout() {
             </div>
           );
         })}
+        <div className="checkoutBtnContainer">
+          <Link to="/" className="cartBtn">
+            Back to Selection
+          </Link>
+        </div>
       </div>
     </>
   );
