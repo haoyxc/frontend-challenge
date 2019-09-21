@@ -15,39 +15,6 @@ class App extends Component {
     inCart: [],
     cartNums: {}
   };
-  // handleClick = number => {
-  //   console.log("hi");
-  // };
-  toggleCart = () => {
-    this.setState({ showCart: !this.state.showCart });
-    console.log(this.state.showCart);
-  };
-  addToCart = (number, title, dept) => {
-    if (!this.state.cartNums[number] && this.state.inCart.length < 7) {
-      let newCart = this.state.inCart;
-      let newNums = this.state.cartNums;
-      newNums[number] = title;
-      newCart.push([number, title, dept]);
-      this.setState({ inCart: newCart, cartNums: newNums });
-    }
-    console.log(this.state.inCart);
-  };
-  clearCart = () => {
-    this.setState({
-      inCart: [],
-      cartNums: {}
-    });
-  };
-  removeItem = number => {
-    let newCart = this.state.inCart;
-    let newNums = this.state.cartNums;
-    newNums[number] = undefined;
-    newCart = newCart.filter(c => {
-      return c[0] !== number;
-    });
-    this.setState({ inCart: newCart, cartNums: newNums });
-    console.log("remove", number);
-  };
 
   render() {
     const { showCart, inCart, clearCart } = this.state;

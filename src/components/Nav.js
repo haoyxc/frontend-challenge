@@ -4,13 +4,7 @@ export default function Nav({ toggleCart, inCart }) {
   let [showCart, setShowCart] = useState(false);
 
   return (
-    <div
-    // style={{
-    //   width: "100%",
-    //   padding: "0 1rem",
-    //   borderBottom: "1px solid rgba(0, 0, 0, 0.1)"
-    // }}
-    >
+    <div>
       <nav className="navbar">
         <div className="navbar-center">
           <span className="nav-icon">

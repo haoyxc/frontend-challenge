@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import Nav from "./Nav";
 import Courses from "./Courses";
@@ -7,19 +8,19 @@ import Cart from "./Cart";
 export default class Home extends Component {
   state = {
     showCart: false,
-    inCart: [[120, "Computer Science"]],
-    cartNums: { 120: "Computer Science" }
+    inCart: [],
+    cartNums: {}
   };
   toggleCart = () => {
     this.setState({ showCart: !this.state.showCart });
     console.log(this.state.showCart);
   };
-  addToCart = (number, title) => {
+  addToCart = (number, title, dept) => {
     if (!this.state.cartNums[number] && this.state.inCart.length < 7) {
       let newCart = this.state.inCart;
       let newNums = this.state.cartNums;
-      newNums[number] = title;
-      newCart.push([number, title]);
+      newNums[number] = dept;
+      newCart.push([number, title, dept]);
       this.setState({ inCart: newCart, cartNums: newNums });
     }
     console.log(this.state.inCart);
@@ -44,6 +45,7 @@ export default class Home extends Component {
     localStorage.setItem("courses", JSON.stringify(this.state.inCart));
     console.log("saved");
   };
+
   render() {
     const { showCart, inCart, clearCart, cartNums } = this.state;
     return (

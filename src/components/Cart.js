@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from "axios";
 
 export default class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      times: []
+    };
+  }
+
   render() {
     let { showStatus, inCart, clearCart, removeItem, saveCart } = this.props;
     return (
@@ -10,15 +18,16 @@ export default class Cart extends Component {
         <h2>Your Course Cart</h2>
         <div className="cart-content"></div>
         {/* Cart Item */}
-        {inCart.map(c => {
+        {inCart.map((c, ind) => {
           return (
             <div>
               <div>
                 <div className="cart-item">
                   <div>
                     <h4>
-                      CIS {c[0]}: {c[1]}
+                      {c[2]} {c[0]}: {c[1]}
                     </h4>
+                    <p>{this.state.times[ind]}</p>
                   </div>
                   <div class="remove-item" onClick={() => removeItem(c[0])}>
                     <span class="fa fa-times"></span>

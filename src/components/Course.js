@@ -6,22 +6,14 @@ export default class Course extends Component {
     this.state = {
       showDescrip: false
     };
-    // this.handleClick = this.handleClick.bind(this);
   }
   handleClick = () => {
     this.setState({ showDescrip: !this.state.showDescrip });
     console.log("clicked");
   };
 
-  //   handleClick(e) {
-  //     e.preventDefault();
-  //     this.setState(state => {
-  //       showDescrip: !state.showDescrip;
-  //     });
-  //     console.log(this.showDescrip);
-  //   }
   render() {
-    let { dept, number, title, description, addToCart, color } = this.props;
+    let { dept, number, title, description, addToCart, color, meetingTime } = this.props;
 
     return (
       <div className={color}>
@@ -29,7 +21,12 @@ export default class Course extends Component {
           <p key={`${dept}-${number}`} className="courseTitle">
             {dept} {number}: {title}
           </p>
-          {this.state.showDescrip ? <p className="description">{description}</p> : null}
+          {this.state.showDescrip ? (
+            <div>
+              <p className="classTime">{meetingTime}</p>
+              <p className="description">{description}</p>
+            </div>
+          ) : null}
         </div>
         <div className="addBtn">
           <i className="fa fa-plus" onClick={addToCart}></i>
