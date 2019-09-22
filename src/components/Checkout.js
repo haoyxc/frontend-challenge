@@ -16,7 +16,7 @@ export default function Checkout() {
       <nav className="navbar">
         <div className="navbar-center checkoutNav">
           <div className="logo-container">
-            <h3>Penn Course Cart</h3>
+            <div className="navTitle">Penn Course Cart</div>
           </div>
         </div>
       </nav>
