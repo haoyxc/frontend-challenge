@@ -1,3 +1,15 @@
+# Preview
+![pcc2](https://user-images.githubusercontent.com/48307028/65399760-8b13c780-dd8c-11e9-8193-72531b34f57c.png)
+![pcc3](https://user-images.githubusercontent.com/48307028/65399761-8b13c780-dd8c-11e9-8e59-445ab59f96a5.png)
+![pcc1](https://user-images.githubusercontent.com/48307028/65399763-8b13c780-dd8c-11e9-87e0-51bd010ad0ba.JPG)
+![pcc4](https://user-images.githubusercontent.com/48307028/65399762-8b13c780-dd8c-11e9-8ad5-ecc193187a16.JPG)
+
+## basic features:
+- Click on a course for description and time/room information (if available)
+- Course cart number updates with the number of items in the cart
+- Can add, delete, or remove items from cart
+- Cannot add more than 7 items at a time
+
 # Penn Labs Frontend Challenge
 
 > If you have already done this challenge, there's a [section below](#repeat-applicants) specifically for you.
