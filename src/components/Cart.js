@@ -24,7 +24,7 @@ export default class Cart extends Component {
                 <div>
                   <div className="cart-item">
                     <div>
-                      <h4>
+                      <h4 className="cartTitle">
                         {c[2]} {c[0]}: {c[1]}
                       </h4>
                       <p>{this.state.times[ind]}</p>

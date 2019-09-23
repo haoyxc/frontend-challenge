@@ -33,7 +33,7 @@ export default function Checkout() {
           );
         })}
         <div className="checkoutBtnContainer">
-          <Link to="/" className="cartBtn">
+          <Link to="/" className="cartBtn backBtn">
             Back to Selection
           </Link>
         </div>
